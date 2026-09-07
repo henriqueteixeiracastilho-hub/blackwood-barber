@@ -1113,3 +1113,39 @@ header {
     word-wrap: break-word !important;
   }
 }
+/* --- CORREÇÃO PARA RESPONSIVIDADE NO TELEMÓVEL --- */
+/* Ajustes para telemóvel */
+@media screen and (max-width: 768px) {
+  html, body {
+    max-width: 100vw !important;
+    overflow-x: hidden !important;
+    margin: 0;
+    padding: 0;
+  }
+
+  header {
+    width: 100% !important;
+    padding: 10px 5px !important;
+    box-sizing: border-box !important;
+  }
+
+  header nav ul {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    padding: 0 !important;
+    margin: 10px 0 0 0 !important;
+    width: 100% !important;
+  }
+
+  header nav ul li {
+    display: inline-block !important;
+  }
+
+  header nav ul li a, 
+  .nav-btn {
+    padding: 6px 10px !important;
+    font-size: 12px !important;
+  }
+}
