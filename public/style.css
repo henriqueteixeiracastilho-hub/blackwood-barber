@@ -1210,3 +1210,41 @@ header {
     margin-right: 0 !important;
   }
 }
+/* --- AJUSTE DE TÍTULOS E CARDS DE SERVIÇOS PARA MOBILE --- */
+@media screen and (max-width: 768px) {
+
+  /* 1. Reduz o tamanho dos titulos grandes */
+  h1, .hero h1, .title, .logo {
+    font-size: 1.8rem !important; /* Diminui o texto para caber no ecra */
+    text-align: center !important;
+    line-height: 1.2 !important;
+  }
+
+  h2, h3 {
+    font-size: 1.3rem !important;
+    text-align: center !important;
+  }
+
+  /* 2. Corrige a grelha de servicos/galeria para 1 coluna */
+  .services-grid, 
+  .galeria-grid, 
+  .cards-container, 
+  .grid {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    width: 100% !important;
+    gap: 15px !important;
+  }
+
+  /* 3. Ajusta a largura das imagens e cards */
+  .service-card, 
+  .card, 
+  .galeria-item, 
+  img {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important; /* Mantem a proporcao das imagens */
+    box-sizing: border-box !important;
+  }
+}
