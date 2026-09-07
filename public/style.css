@@ -1078,3 +1078,12 @@ header {
   transform: scale(1.1);
   background-color: #f1c40f;
 }
+/* Quando o ecrã for pequeno (como o de um telemóvel) */
+@media (max-width: 600px) {
+  .chat-container {
+    width: 95%;       /* Ocupa quase a largura toda do ecrã */
+    max-width: none;  /* Remove limites fixos de largura */
+    margin: 10px auto;/* Centra a caixa no ecrã */
+    font-size: 14px;  /* Ajusta o tamanho do texto */
+  }
+}
