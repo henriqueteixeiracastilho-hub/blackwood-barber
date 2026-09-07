@@ -1087,3 +1087,29 @@ header {
     font-size: 14px;  /* Ajusta o tamanho do texto */
   }
 }
+/* Ajustes para ecrãs de telemóvel */
+@media screen and (max-width: 768px) {
+  /* Força o ecra e caixas principais a não ultrapassarem a largura do ecrã */
+  body, html {
+    overflow-x: hidden !important;
+    width: 100% !important;
+  }
+
+  /* Ajusta a caixa do chat / agendamento */
+  .chat-container, 
+  .chat-box, 
+  #chat, 
+  .container {
+    width: 95% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    margin: 10px auto !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Garante que o texto e os botões dentro do chat não saem para fora */
+  .chat-container * {
+    max-width: 100% !important;
+    word-wrap: break-word !important;
+  }
+}
