@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Início - Blackwood Barber</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- CABEÇALHO -->
+  <header>
+    <div class="logo">BLACKWOOD BARBER</div>
+    <nav>
+      <ul>
+        <li><a href="index.html" class="nav-btn">Início</a></li>
+        <li><a href="reserva.html" class="nav-btn">Reservar</a></li>
+        <li><a href="minhas-reservas.html" class="nav-btn">Minhas Reservas</a></li>
+        <li><a href="servicos.html" class="nav-btn">Serviços</a></li>
+        <li><a href="galeria.html" class="nav-btn">Galeria</a></li>
+        <li><a href="admin.html" class="nav-btn">Painel Admin</a></li>
+        
+        <!-- BOTÃO DE PERFIL -->
+        <li>
+          <button id="btn-abrir-perfil" class="perfil-nav-btn" type="button">
+            <img id="avatar-nav-img" src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Perfil" class="avatar-nav">
+            <span id="nome-nav-user">Meu Perfil</span>
+          </button>
+        </li>
+
+        <li><a href="login.html" class="nav-btn btn-sair">Sair</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- CAPA PRINCIPAL -->
+  <section class="hero" style="min-height: calc(100vh - 80px); display: flex; align-items: center; justify-content: center; text-align: center; background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1503951914875-452162b0f3f1?q=80&w=1600') center/cover no-repeat; padding: 20px;">
+    <div class="hero-content" style="max-width: 800px;">
+      <h1 style="font-size: 3.2rem; color: #d4af37; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 2px;">BLACKWOOD BARBER</h1>
+      <p style="font-size: 1.3rem; color: #ddd; margin-bottom: 30px;">Estilo, tradição e precisão no seu corte.</p>
+      <a href="reserva.html" class="btn-submit" style="display: inline-block; width: auto; padding: 15px 35px; text-decoration: none; font-size: 1.1rem; font-weight: bold; letter-spacing: 1px;">AGENDAR AGORA</a>
+    </div>
+  </section>
+
+  <!-- MODAL DE EDIÇÃO DE PERFIL -->
+  <div id="modal-perfil" class="modal-overlay">
+    <div class="modal-box">
+      <button id="btn-fechar-modal" class="modal-fechar" type="button">&times;</button>
+      <h3 style="color: #d4af37; margin-bottom: 5px; text-align: center;">Editar Perfil</h3>
+      <p style="color: #888; font-size: 0.85rem; margin-bottom: 20px; text-align: center;">Atualize o seu nome e foto de perfil</p>
+
+      <div class="avatar-upload-container">
+        <div class="avatar-wrapper">
+          <img id="modal-avatar-preview" src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Foto Perfil" class="avatar-preview">
+          
+          <label for="perfil-foto-file" class="btn-trocar-foto" title="Mudar Foto">
+            ✏️
+          </label>
+          <input type="file" id="perfil-foto-file" accept="image/*" style="display: none;">
+        </div>
+      </div>
+
+      <form id="form-perfil">
+        <div class="form-group" style="margin-bottom: 20px;">
+          <label for="perfil-nome">NOME COMPLETO</label>
+          <input type="text" id="perfil-nome" required placeholder="O seu nome">
+        </div>
+
+        <button type="submit" class="btn-submit" style="width: 100%;">GUARDAR ALTERAÇÕES</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- SCRIPT INTEGRADO DO PERFIL -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const btnAbrirPerfil = document.getElementById('btn-abrir-perfil');
+      const btnFecharModal = document.getElementById('btn-fechar-modal');
+      const modalPerfil = document.getElementById('modal-perfil');
+      const formPerfil = document.getElementById('form-perfil');
+
+      const avatarNavImg = document.getElementById('avatar-nav-img');
+      const nomeNavUser = document.getElementById('nome-nav-user');
+      const modalAvatarPreview = document.getElementById('modal-avatar-preview');
+      const inputNome = document.getElementById('perfil-nome');
+      const inputFotoFile = document.getElementById('perfil-foto-file');
+
+      const AVATAR_PADRAO = "https://cdn-icons-png.flaticon.com/512/3135/3135715.png";
+      let fotoBase64Temp = null;
+
+      function carregarPerfil() {
+        const nomeGuardado = localStorage.getItem('user_nome') || 'Henrique Castilho';
+        const fotoGuardada = localStorage.getItem('user_foto') || AVATAR_PADRAO;
+
+        if (nomeNavUser) nomeNavUser.textContent = nomeGuardado;
+        if (avatarNavImg) avatarNavImg.src = fotoGuardada;
+        if (modalAvatarPreview) modalAvatarPreview.src = fotoGuardada;
+        if (inputNome) inputNome.value = nomeGuardado;
+
+        fotoBase64Temp = fotoGuardada;
+      }
+
+      if (btnAbrirPerfil && modalPerfil) {
+        btnAbrirPerfil.addEventListener('click', (e) => {
+          e.preventDefault();
+          carregarPerfil();
+          modalPerfil.classList.add('active');
+        });
+      }
+
+      if (btnFecharModal && modalPerfil) {
+        btnFecharModal.addEventListener('click', () => {
+          modalPerfil.classList.remove('active');
+        });
+      }
+
+      if (modalPerfil) {
+        modalPerfil.addEventListener('click', (e) => {
+          if (e.target === modalPerfil) {
+            modalPerfil.classList.remove('active');
+          }
+        });
+      }
+
+      if (inputFotoFile) {
+        inputFotoFile.addEventListener('change', (e) => {
+          const file = e.target.files[0];
+          if (file) {
+            const reader = new FileReader();
+            reader.onload = function(event) {
+              fotoBase64Temp = event.target.result;
+              if (modalAvatarPreview) {
+                modalAvatarPreview.src = fotoBase64Temp;
+              }
+            };
+            reader.readAsDataURL(file);
+          }
+        });
+      }
+
+      if (formPerfil) {
+        formPerfil.addEventListener('submit', (e) => {
+          e.preventDefault();
+
+          const novoNome = inputNome.value.trim();
+          localStorage.setItem('user_nome', novoNome);
+
+          if (fotoBase64Temp) {
+            localStorage.setItem('user_foto', fotoBase64Temp);
+          }
+
+          carregarPerfil();
+          modalPerfil.classList.remove('active');
+          alert('Perfil atualizado com sucesso!');
+        });
+      }
+
+      carregarPerfil();
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Painel Admin - Blackwood Barber</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .tabela-reservas {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+      color: #fff;
+      font-size: 0.9rem;
+    }
+    .tabela-reservas th, .tabela-reservas td {
+      padding: 12px;
+      text-align: left;
+      border-bottom: 1px solid #333;
+    }
+    .tabela-reservas th {
+      color: #d4af37;
+      border-bottom: 2px solid #d4af37;
+    }
+    .btn-cancelar-admin {
+      background-color: #8b0000;
+      color: white;
+      border: none;
+      padding: 6px 12px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .btn-cancelar-admin:hover {
+      background-color: #ff0000;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- CABEÇALHO -->
+<header>
+  <div class="logo">BLACKWOOD BARBER</div>
+  <nav>
+    <ul>
+      <li><a href="index.html" class="nav-btn">Início</a></li>
+      <li><a href="reserva.html" class="nav-btn">Reservar</a></li>
+      <li><a href="minhas-reservas.html" class="nav-btn">Minhas Reservas</a></li>
+      <li><a href="servicos.html" class="nav-btn">Serviços</a></li>
+      <li><a href="galeria.html" class="nav-btn">Galeria</a></li>
+      <li><a href="admin.html" class="nav-btn">Painel Admin</a></li>
+      <li><a href="login.html" class="nav-btn btn-sair">Sair</a></li>
+    </ul>
+  </nav>
+</header>
+
+  <main class="main-container">
+    <div class="card-box-reserva" style="max-width: 950px; width: 100%;">
+      <h2>Painel de Gestão de Reservas</h2>
+      <p class="subtitulo">Consulte e gira os agendamentos marcados pelos clientes</p>
+
+      <div style="display: flex; gap: 10px; margin-top: 15px;">
+        <input type="text" id="filtro-pesquisa" placeholder="Pesquisar por nome ou telemóvel..." style="flex: 1;">
+        <button id="btn-atualizar" class="btn-submit" style="width: auto; padding: 0 20px; margin: 0;">ATUALIZAR LISTA</button>
+      </div>
+
+      <table class="tabela-reservas">
+        <thead>
+          <tr>
+            <th>Cliente</th>
+            <th>Telemóvel</th>
+            <th>Serviço</th>
+            <th>Barbeiro</th>
+            <th>Data & Hora</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody id="tabela-admin">
+          <tr>
+            <td colspan="6" style="text-align: center; color: #888;">A carregar reservas...</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+<!-- MODAL DE EDIÇÃO DE PERFIL -->
+<div id="modal-perfil" class="modal-overlay">
+  <div class="modal-box">
+    <button id="btn-fechar-modal" class="modal-fechar">&times;</button>
+    <h3 style="color: #d4af37; margin-bottom: 5px;">Editar Perfil</h3>
+    <p style="color: #888; font-size: 0.85rem; margin-bottom: 20px;">Atualize o seu nome e foto de exibição</p>
+
+    <div class="preview-avatar-container">
+      <img id="modal-avatar-preview" src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Foto Perfil" class="avatar-preview">
+    </div>
+
+    <form id="form-perfil">
+      <div class="form-group" style="margin-bottom: 15px;">
+        <label for="perfil-nome">NOME</label>
+        <input type="text" id="perfil-nome" required placeholder="O seu nome">
+      </div>
+
+      <div class="form-group" style="margin-bottom: 20px;">
+        <label for="perfil-foto-url">URL DA FOTO / IMAGEM</label>
+        <input type="url" id="perfil-foto-url" placeholder="https://exemplo.com/foto.jpg">
+      </div>
+
+      <button type="submit" class="btn-submit" style="width: 100%;">GUARDAR ALTERAÇÕES</button>
+    </form>
+  </div>
+</div>
+</body>
+</html>

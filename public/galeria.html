@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galeria - Blackwood Barber</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="logo">BLACKWOOD BARBER</div>
+  <nav>
+    <ul>
+      <li><a href="index.html" class="nav-btn">Início</a></li>
+      <li><a href="reserva.html" class="nav-btn">Reservar</a></li>
+      <li><a href="minhas-reservas.html" class="nav-btn">Minhas Reservas</a></li>
+      <li><a href="servicos.html" class="nav-btn">Serviços</a></li>
+      <li><a href="galeria.html" class="nav-btn">Galeria</a></li>
+      <li><a href="admin.html" class="nav-btn">Painel Admin</a></li>
+      <li><a href="login.html" class="nav-btn btn-sair">Sair</a></li>
+    </ul>
+  </nav>
+</header>
+
+  <main class="secçao-reserva" style="max-width: 1000px;">
+    <div class="form-container">
+      <h2>Galeria de Trabalhos</h2>
+      <p>Conheça alguns dos cortes e acabamentos efetuados pela nossa equipa</p>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 25px;">
+        
+        <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--border-color); border-radius: 12px; overflow: hidden;">
+          <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=600&q=80" alt="Skin Fade" style="width: 100%; height: 220px; object-fit: cover;">
+          <div style="padding: 15px;">
+            <h3 style="color: var(--accent-color); font-size: 1.1rem;">Skin Fade & Beard</h3>
+            <p style="text-align: left; font-size: 0.85rem; margin-bottom: 0;">Trabalho efetuado por André Silva</p>
+          </div>
+        </div>
+
+        <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--border-color); border-radius: 12px; overflow: hidden;">
+          <img src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?auto=format&fit=crop&w=600&q=80" alt="Corte Clássico" style="width: 100%; height: 220px; object-fit: cover;">
+          <div style="padding: 15px;">
+            <h3 style="color: var(--accent-color); font-size: 1.1rem;">Corte Clássico Executivo</h3>
+            <p style="text-align: left; font-size: 0.85rem; margin-bottom: 0;">Trabalho efetuado por Rui Costa</p>
+          </div>
+        </div>
+
+        <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--border-color); border-radius: 12px; overflow: hidden;">
+          <img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&w=600&q=80" alt="Perfil de Barba" style="width: 100%; height: 220px; object-fit: cover;">
+          <div style="padding: 15px;">
+            <h3 style="color: var(--accent-color); font-size: 1.1rem;">Perfil e Rito de Barba</h3>
+            <p style="text-align: left; font-size: 0.85rem; margin-bottom: 0;">Trabalho efetuado por André Silva</p>
+          </div>
+        </div>
+
+      </div>
+
+      <div style="margin-top: 30px; text-align: center;">
+        <a href="reserva.html" class="btn-block" style="display: inline-block; text-decoration: none; max-width: 280px;">Garantir o Meu Horário</a>
+      </div>
+    </div>
+  </main>
+
+</body>
+</html>

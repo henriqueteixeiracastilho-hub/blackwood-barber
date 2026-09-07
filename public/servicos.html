@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Serviços - Blackwood Barber</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="logo">BLACKWOOD BARBER</div>
+  <nav>
+    <ul>
+      <li><a href="index.html" class="nav-btn">Início</a></li>
+      <li><a href="reserva.html" class="nav-btn">Reservar</a></li>
+      <li><a href="minhas-reservas.html" class="nav-btn">Minhas Reservas</a></li>
+      <li><a href="servicos.html" class="nav-btn">Serviços</a></li>
+      <li><a href="galeria.html" class="nav-btn">Galeria</a></li>
+      <li><a href="admin.html" class="nav-btn">Painel Admin</a></li>
+      <li><a href="login.html" class="nav-btn btn-sair">Sair</a></li>
+    </ul>
+  </nav>
+</header>
+
+  <main style="max-width: 1000px; margin: 40px auto; padding: 0 20px; flex: 1;">
+    <div style="text-align: center; margin-bottom: 40px;">
+      <h2 style="color: var(--accent-color); font-size: 2rem; margin-bottom: 8px;">Tabela de Serviços & Preços</h2>
+      <p style="color: var(--text-muted); font-size: 1rem;">Clica em qualquer serviço para agendar diretamente</p>
+    </div>
+
+    <!-- GRELHA 2 COLUNAS (2 POR 2) COM CLIQUE AUTOMÁTICO -->
+    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px;">
+      
+      <div class="card-servico" onclick="selecionarServico('corte')">
+        <div>
+          <h3 style="color: var(--accent-color); font-size: 1.2rem; margin-bottom: 8px;">Corte de Cabelo</h3>
+          <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.5; margin-bottom: 16px;">Corte com tesoura ou máquina, lavagem e finalização profissional.</p>
+        </div>
+        <span style="font-size: 1.5rem; font-weight: 700; color: #fff;">12€</span>
+      </div>
+
+      <div class="card-servico" onclick="selecionarServico('barba')">
+        <div>
+          <h3 style="color: var(--accent-color); font-size: 1.2rem; margin-bottom: 8px;">Barba</h3>
+          <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.5; margin-bottom: 16px;">Modelagem e alinhamento de barba com acabamento em navalha.</p>
+        </div>
+        <span style="font-size: 1.5rem; font-weight: 700; color: #fff;">5€</span>
+      </div>
+
+      <div class="card-servico" onclick="selecionarServico('combo')">
+        <div>
+          <h3 style="color: var(--accent-color); font-size: 1.2rem; margin-bottom: 8px;">Combo Corte + Barba</h3>
+          <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.5; margin-bottom: 16px;">Corte completo de cabelo combinado com tratamento de barba.</p>
+        </div>
+        <span style="font-size: 1.5rem; font-weight: 700; color: #fff;">15€</span>
+      </div>
+
+      <div class="card-servico" onclick="selecionarServico('corte-crianca')">
+        <div>
+          <h3 style="color: var(--accent-color); font-size: 1.2rem; margin-bottom: 8px;">Corte Criança até 10 anos</h3>
+          <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.5; margin-bottom: 16px;">Corte de cabelo adaptado e com atendimento especial para os mais novos.</p>
+        </div>
+        <span style="font-size: 1.5rem; font-weight: 700; color: #fff;">10€</span>
+      </div>
+
+      <div class="card-servico" onclick="selecionarServico('madeixas')">
+        <div>
+          <h3 style="color: var(--accent-color); font-size: 1.2rem; margin-bottom: 8px;">Madeixas</h3>
+          <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.5; margin-bottom: 16px;">Técnica de iluminação e descoloração parcial dos fios de cabelo.</p>
+        </div>
+        <span style="font-size: 1.5rem; font-weight: 700; color: #fff;">30€</span>
+      </div>
+
+      <div class="card-servico" onclick="selecionarServico('platinar')">
+        <div>
+          <h3 style="color: var(--accent-color); font-size: 1.2rem; margin-bottom: 8px;">Platinar</h3>
+          <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.5; margin-bottom: 16px;">Descoloração global do cabelo para tom platinado com matização.</p>
+        </div>
+        <span style="font-size: 1.5rem; font-weight: 700; color: #fff;">30€</span>
+      </div>
+
+      <div class="card-servico" onclick="selecionarServico('ondulacao')">
+        <div>
+          <h3 style="color: var(--accent-color); font-size: 1.2rem; margin-bottom: 8px;">Ondulação</h3>
+          <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.5; margin-bottom: 16px;">Procedimento para criar caracóis e ondas com textura e volume.</p>
+        </div>
+        <span style="font-size: 1.5rem; font-weight: 700; color: #fff;">35€</span>
+      </div>
+
+      <div class="card-servico" onclick="selecionarServico('desfriagem')">
+        <div>
+          <h3 style="color: var(--accent-color); font-size: 1.2rem; margin-bottom: 8px;">Desfriagem</h3>
+          <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.5; margin-bottom: 16px;">Tratamento para alinhamento e alisamento dos fios de cabelo.</p>
+        </div>
+        <span style="font-size: 1.5rem; font-weight: 700; color: #fff;">30€</span>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-col">
+        <h3>Blackwood Barber</h3>
+        <p>A tua barbearia de referência. Estilo, precisão e tradição no mesmo lugar.</p>
+      </div>
+
+      <div class="footer-col">
+        <h3>Horário</h3>
+        <p><strong>Segunda - Sábado:</strong> 09:00 - 19:00</p>
+        <p><strong>Domingo:</strong> Encerrado</p>
+      </div>
+
+      <div class="footer-col">
+        <h3>Contactos & Localização</h3>
+        <p>📍 Av. Principal nº 123, Lisboa</p>
+        <p>📞 +351 912 345 678</p>
+        <p>✉️ contacto@blackwoodbarber.pt</p>
+      </div>
+
+      <div class="footer-col">
+        <h3>Onde Estamos</h3>
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3113.2389140228!2d-9.142685!3d38.715325!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzjCsDQyJzU1LjEiTiA5wrAwOCczMy43Ilc!5e0!3m2!1wpt-PT!2spt!4v1620000000000!5m2!1wpt-PT!2spt" 
+          width="100%" 
+          height="120" 
+          style="border:0; border-radius: 8px;" 
+          allowfullscreen="" 
+          loading="lazy">
+        </iframe>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      &copy; 2026 Blackwood Barber. Todos os direitos reservados.
+    </div>
+  </footer>
+
+  <script>
+    function selecionarServico(servico) {
+      window.location.href = `reserva.html?servico=${servico}`;
+    }
+  </script>
+<!-- MODAL DE EDIÇÃO DE PERFIL -->
+<div id="modal-perfil" class="modal-overlay">
+  <div class="modal-box">
+    <button id="btn-fechar-modal" class="modal-fechar">&times;</button>
+    <h3 style="color: #d4af37; margin-bottom: 5px;">Editar Perfil</h3>
+    <p style="color: #888; font-size: 0.85rem; margin-bottom: 20px;">Atualize o seu nome e foto de exibição</p>
+
+    <div class="preview-avatar-container">
+      <img id="modal-avatar-preview" src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Foto Perfil" class="avatar-preview">
+    </div>
+
+    <form id="form-perfil">
+      <div class="form-group" style="margin-bottom: 15px;">
+        <label for="perfil-nome">NOME</label>
+        <input type="text" id="perfil-nome" required placeholder="O seu nome">
+      </div>
+
+      <div class="form-group" style="margin-bottom: 20px;">
+        <label for="perfil-foto-url">URL DA FOTO / IMAGEM</label>
+        <input type="url" id="perfil-foto-url" placeholder="https://exemplo.com/foto.jpg">
+      </div>
+
+      <button type="submit" class="btn-submit" style="width: 100%;">GUARDAR ALTERAÇÕES</button>
+    </form>
+  </div>
+</div>
+</body>
+</html>

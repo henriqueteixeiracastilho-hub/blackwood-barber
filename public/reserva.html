@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reserva - Blackwood Barber</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- CABEÇALHO -->
+<header>
+  <div class="logo">BLACKWOOD BARBER</div>
+  <nav>
+    <ul>
+      <li><a href="index.html" class="nav-btn">Início</a></li>
+      <li><a href="reserva.html" class="nav-btn">Reservar</a></li>
+      <li><a href="minhas-reservas.html" class="nav-btn">Minhas Reservas</a></li>
+      <li><a href="servicos.html" class="nav-btn">Serviços</a></li>
+      <li><a href="galeria.html" class="nav-btn">Galeria</a></li>
+      <li><a href="admin.html" class="nav-btn">Painel Admin</a></li>
+      <li><a href="login.html" class="nav-btn btn-sair">Sair</a></li>
+    </ul>
+  </nav>
+</header>
+
+  <!-- FORMULÁRIO DE RESERVA -->
+  <main class="main-container">
+    <div class="card-box-reserva">
+      <h2>Agendar Serviço</h2>
+      <p class="subtitulo">Preencha os seus dados e selecione o horário pretendido</p>
+
+      <form id="form-reserva">
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="nome">NOME COMPLETO</label>
+            <input type="text" id="nome" required placeholder="Ex: Henrique Castilho">
+          </div>
+
+          <div class="form-group">
+            <label for="telemovel">TELEMÓVEL / WHATSAPP</label>
+            <input type="tel" id="telemovel" required placeholder="Ex: 931 961 214">
+          </div>
+
+          <div class="form-group">
+            <label for="servico">SERVIÇO PRETENDIDO</label>
+            <select id="servico" required>
+              <option value="">Selecione um serviço...</option>
+              <option value="Corte de Cabelo (12€)">Corte de Cabelo (12€)</option>
+              <option value="Barba (5€)">Barba (5€)</option>
+              <option value="Combo Corte + Barba (15€)">Combo Corte + Barba (15€)</option>
+              <option value="Corte Criança até 10 anos (10€)">Corte Criança até 10 anos (10€)</option>
+              <option value="Madeixas (30€)">Madeixas (30€)</option>
+              <option value="Platinar (30€)">Platinar (30€)</option>
+              <option value="Ondulação (35€)">Ondulação (35€)</option>
+              <option value="Desfriagem (30€)">Desfriagem (30€)</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="barbeiro">BARBEIRO DE PREFERÊNCIA</label>
+            <select id="barbeiro">
+              <option value="Primeiro Disponível">Primeiro Disponível</option>
+              <option value="Barbeiro 1">Barbeiro 1</option>
+              <option value="Barbeiro 2">Barbeiro 2</option>
+            </select>
+          </div>
+
+          <div class="form-group full-width">
+            <label for="data">DATA DA RESERVA</label>
+            <input type="date" id="data" required>
+          </div>
+        </div>
+
+        <!-- HORÁRIOS DENTRO DO CARD DA TABELA -->
+        <div class="form-group full-width" style="margin-top: 15px;">
+          <label>HORÁRIOS DISPONÍVEIS</label>
+          <div id="horarios-grid"></div>
+        </div>
+
+        <button type="submit" class="btn-submit">CONFIRMAR AGENDAMENTO</button>
+      </form>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+<!-- MODAL DE EDIÇÃO DE PERFIL -->
+<div id="modal-perfil" class="modal-overlay">
+  <div class="modal-box">
+    <button id="btn-fechar-modal" class="modal-fechar">&times;</button>
+    <h3 style="color: #d4af37; margin-bottom: 5px;">Editar Perfil</h3>
+    <p style="color: #888; font-size: 0.85rem; margin-bottom: 20px;">Atualize o seu nome e foto de exibição</p>
+
+    <div class="preview-avatar-container">
+      <img id="modal-avatar-preview" src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Foto Perfil" class="avatar-preview">
+    </div>
+
+    <form id="form-perfil">
+      <div class="form-group" style="margin-bottom: 15px;">
+        <label for="perfil-nome">NOME</label>
+        <input type="text" id="perfil-nome" required placeholder="O seu nome">
+      </div>
+
+      <div class="form-group" style="margin-bottom: 20px;">
+        <label for="perfil-foto-url">URL DA FOTO / IMAGEM</label>
+        <input type="url" id="perfil-foto-url" placeholder="https://exemplo.com/foto.jpg">
+      </div>
+
+      <button type="submit" class="btn-submit" style="width: 100%;">GUARDAR ALTERAÇÕES</button>
+    </form>
+  </div>
+</div>
+</body>
+</html>
