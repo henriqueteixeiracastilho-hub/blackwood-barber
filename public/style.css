@@ -1149,3 +1149,64 @@ header {
     font-size: 12px !important;
   }
 }
+/* --- CORREÇÃO DEFINITIVA PARA TELEMÓVEL --- */
+@media screen and (max-width: 768px) {
+  
+  /* 1. Bloqueia a rolagem horizontal no ecra inteiro */
+  html, body {
+    width: 100% !important;
+    max-width: 100vw !important;
+    overflow-x: hidden !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* 2. Forca TUDO a respeitar os limites do ecra */
+  *, *::before, *::after {
+    box-sizing: border-box !important;
+    max-width: 100% !important;
+  }
+
+  /* 3. Ajusta o Cabeçalho e o Logo */
+  header {
+    flex-direction: column !important;
+    align-items: center !important;
+    padding: 15px 10px !important;
+    width: 100% !important;
+  }
+
+  header nav ul {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 6px !important;
+    padding: 0 !important;
+    margin: 10px 0 0 0 !important;
+    width: 100% !important;
+  }
+
+  /* 4. Ajusta a caixa do formulario / agendamento */
+  .container, 
+  form, 
+  section, 
+  div[class*="content"], 
+  div[class*="card"] {
+    width: 92% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+  }
+
+  /* 5. Corrige os inputs e selects que estao a sobressair */
+  input, 
+  select, 
+  textarea, 
+  button {
+    width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+}
