@@ -1248,3 +1248,71 @@ header {
     box-sizing: border-box !important;
   }
 }
+/* ===================================================
+   CORREÇÃO DEFINITIVA MOBILE - BLACKWOOD BARBER
+=================================================== */
+@media screen and (max-width: 768px) {
+
+  /* 1. Trava o ecra na largura do telemovel */
+  html, body {
+    width: 100% !important;
+    max-width: 100vw !important;
+    overflow-x: hidden !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  *, *::before, *::after {
+    box-sizing: border-box !important;
+  }
+
+  /* 2. Ajusta Titulos Grandes (Início, Serviços, etc.) */
+  h1, .hero h1, .title, .logo, hero-title {
+    font-size: 1.8rem !important;
+    text-align: center !important;
+    line-height: 1.2 !important;
+    word-break: break-word !important;
+  }
+
+  h2, h3 {
+    font-size: 1.3rem !important;
+    text-align: center !important;
+  }
+
+  /* 3. Reorganiza Servicos e Galeria em 1 coluna */
+  .services-grid, 
+  .galeria-grid, 
+  .cards-container, 
+  .grid, 
+  .servicos-container {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    width: 100% !important;
+    gap: 20px !important;
+    padding: 10px !important;
+  }
+
+  /* 4. Ajusta os Cards e Imagens dos Servicos */
+  .service-card, 
+  .card, 
+  .galeria-item, 
+  .servico-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    box-sizing: border-box !important;
+  }
+
+  img {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+
+  /* 5. Ajusta Formulario e Inputs */
+  input, select, textarea, button {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+}
