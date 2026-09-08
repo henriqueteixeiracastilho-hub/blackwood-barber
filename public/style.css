@@ -1594,3 +1594,51 @@ header {
     box-sizing: border-box !important;
   }
 }
+/* --- CORREÇÃO DEFINITIVA DO FORMULÁRIO MOBILE --- */
+@media screen and (max-width: 768px) {
+
+  /* 1. Alarga a caixa principal do formulário */
+  .booking-container,
+  .form-container,
+  .booking-card,
+  .card,
+  form {
+    width: 90% !important;
+    max-width: 90vw !important;
+    min-width: 0 !important;
+    margin: 20px auto !important;
+    padding: 20px 15px !important;
+    box-sizing: border-box !important;
+  }
+
+  /* 2. Força todos os grupos de campos a respeitarem a largura */
+  .form-group,
+  .input-group {
+    width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  /* 3. Prende todas as caixas de texto e seleções dentro da caixa escura */
+  input[type="text"],
+  input[type="tel"],
+  input[type="date"],
+  select,
+  textarea {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    margin: 5px 0 15px 0 !important;
+  }
+
+  /* 4. Ajusta o botão amarelo */
+  button[type="submit"],
+  .btn-submit,
+  .confirm-btn {
+    width: 100% !important;
+    box-sizing: border-box !important;
+    margin-top: 10px !important;
+  }
+}
