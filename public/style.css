@@ -1959,3 +1959,56 @@ header a:last-child:hover, nav a:last-child:hover {
     transform: translateY(-1px) !important;
   }
 }
+/* --- MENU DE NAVEGAÇÃO CÁPSULA AMARELO COM ANIMAÇÃO (DESKTOP) --- */
+@media screen and (min-width: 769px) {
+  header.main-header, header {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    padding: 15px 40px !important;
+    background-color: #0d0d0d !important;
+    border-bottom: 1px solid #1f1f1f !important;
+  }
+
+  header .logo {
+    color: #e5b869 !important;
+    font-size: 1.2rem !important;
+    font-weight: 700 !important;
+    text-decoration: none !important;
+    letter-spacing: 1.5px !important;
+  }
+
+  header nav, .nav-links {
+    display: flex !important;
+    align-items: center !important;
+    gap: 12px !important;
+  }
+
+  /* Todos os botões (incluindo o Sair) em formato cápsula amarela */
+  header nav a, .nav-btn {
+    display: inline-block !important;
+    padding: 8px 20px !important;
+    color: #ffffff !important;
+    text-decoration: none !important;
+    font-size: 0.85rem !important;
+    font-weight: 500 !important;
+    border: 1px solid #e5b869 !important; /* Borda amarela/dourada */
+    border-radius: 50px !important;       /* Formato cápsula */
+    background: transparent !important;
+    /* Animação suave para o movimento */
+    transition: transform 0.25s ease, background-color 0.25s ease, box-shadow 0.25s ease, color 0.25s ease !important;
+  }
+
+  /* EFEITO DOS BOTÕES A MEXER (Subida + Brilho) */
+  header nav a:hover, .nav-btn:hover {
+    background-color: #e5b869 !important;
+    color: #000000 !important;
+    transform: translateY(-3px) !important; /* Subida do botão */
+    box-shadow: 0 4px 14px rgba(229, 184, 105, 0.45) !important; /* Brilho dourado */
+  }
+
+  /* Clique */
+  header nav a:active, .nav-btn:active {
+    transform: translateY(-1px) !important;
+  }
+}
