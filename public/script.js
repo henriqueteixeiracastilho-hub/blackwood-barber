@@ -1,5 +1,18 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // 1. LÓGICA DA PÁGINA DE RESERVA (reserva.html)
+  // ==========================================================
+  // 1. AUTO-SELEÇÃO DO SERVIÇO VINDO DA PÁGINA DE SERVIÇOS
+  // ==========================================================
+  const params = new URLSearchParams(window.location.search);
+  const servicoParam = params.get("servico");
+  const selectServico = document.getElementById("servico");
+
+  if (servicoParam && selectServico) {
+    selectServico.value = servicoParam;
+  }
+
+  // ==========================================================
+  // 2. LÓGICA DA PÁGINA DE RESERVA (reserva.html)
+  // ==========================================================
   const bookingForm = document.getElementById("bookingForm");
   const dataInput = document.getElementById("data");
   const horariosContainer = document.getElementById("horariosContainer");
@@ -13,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let horarioSelecionado = null;
 
-  // Quando o utilizador escolhe uma data, gera os horários
+  // Quando o utilizador escolhe/muda uma data, gera a grelha de horários
   if (dataInput && horariosContainer) {
     dataInput.addEventListener("change", (e) => {
       const dataEscolhida = e.target.value;
@@ -46,7 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Quando o utilizador clica em "CONFIRMAR AGENDAMENTO"
+  // Submissão do formulário de reserva
   if (bookingForm) {
     bookingForm.addEventListener("submit", (e) => {
       e.preventDefault();
@@ -66,23 +79,26 @@ document.addEventListener("DOMContentLoaded", () => {
         horario: horarioSelecionado
       };
 
-      // Guarda a reserva no localStorage do navegador
+      // Guarda no localStorage
       const reservas = JSON.parse(localStorage.getItem("minhasReservas") || "[]");
       reservas.push(novaReserva);
       localStorage.setItem("minhasReservas", JSON.stringify(reservas));
 
-      // Redireciona imediatamente para a página de Minhas Reservas
+      // Redireciona diretamente para a página de Minhas Reservas
       window.location.href = "minhas-reservas.html";
     });
   }
 
-  // 2. LÓGICA DA PÁGINA MINHAS RESERVAS (minhas-reservas.html)
+  // ==========================================================
+  // 3. LÓGICA DA PÁGINA MINHAS RESERVAS (minhas-reservas.html)
+  // ==========================================================
   const listaReservas = document.getElementById("listaReservas");
   if (listaReservas) {
     carregarReservas();
   }
 });
 
+// Função para renderizar as reservas guardadas
 function carregarReservas() {
   const listaReservas = document.getElementById("listaReservas");
   if (!listaReservas) return;
@@ -99,22 +115,23 @@ function carregarReservas() {
   reservas.forEach((reserva, index) => {
     const card = document.createElement("div");
     card.className = "reserva-item";
-    card.style.cssText = "background: #121212; border: 1px solid #333; padding: 15px; border-radius: 8px; margin-bottom: 12px; display: flex; justify-content: space-between; align-items: center;";
+    card.style.cssText = "background: #121212; border: 1px solid #333; padding: 18px; border-radius: 8px; margin-bottom: 12px; display: flex; justify-content: space-between; align-items: center;";
 
     card.innerHTML = `
       <div>
-        <h4 style="color: #e5b869; margin: 0 0 5px 0;">${reserva.servico}</h4>
-        <p style="margin: 2px 0; font-size: 0.85rem; color: #ccc;"><strong>Data:</strong> ${reserva.data} às ${reserva.horario}</p>
-        <p style="margin: 2px 0; font-size: 0.85rem; color: #ccc;"><strong>Barbeiro:</strong> ${reserva.barbeiro}</p>
-        <p style="margin: 2px 0; font-size: 0.85rem; color: #888;">Cliente: ${reserva.nome} (${reserva.telemovel})</p>
+        <h4 style="color: #e5b869; margin: 0 0 6px 0; font-size: 1.1rem;">${reserva.servico}</h4>
+        <p style="margin: 3px 0; font-size: 0.9rem; color: #ddd;"><strong>Data:</strong> ${reserva.data} às ${reserva.horario}</p>
+        <p style="margin: 3px 0; font-size: 0.9rem; color: #ddd;"><strong>Barbeiro:</strong> ${reserva.barbeiro}</p>
+        <p style="margin: 3px 0; font-size: 0.85rem; color: #888;">Cliente: ${reserva.nome} (${reserva.telemovel})</p>
       </div>
-      <button onclick="cancelarReserva(${index})" style="background: #ff4d4d; color: #fff; border: none; padding: 8px 12px; border-radius: 4px; cursor: pointer; font-size: 0.8rem;">Cancelar</button>
+      <button onclick="cancelarReserva(${index})" style="background: #e53935; color: #fff; border: none; padding: 8px 14px; border-radius: 6px; cursor: pointer; font-weight: 600; font-size: 0.85rem;">Cancelar</button>
     `;
 
     listaReservas.appendChild(card);
   });
 }
 
+// Função para cancelar/remover uma reserva
 function cancelarReserva(index) {
   if (confirm("Tem a certeza que deseja cancelar esta reserva?")) {
     const reservas = JSON.parse(localStorage.getItem("minhasReservas") || "[]");

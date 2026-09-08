@@ -2483,3 +2483,44 @@ main,
   text-align: center !important;
   margin: 30px 0 !important;
 }
+/* ==========================================================
+   GRELHA DE SERVIÇOS 2 EM CIMA, 2 EM BAIXO
+   ========================================================== */
+.services-wrapper {
+  width: 100% !important;
+  max-width: 850px !important;
+  margin: 0 auto !important;
+  text-align: center !important;
+}
+
+.services-grid-2x2 {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important; /* Exatamente 2 colunas */
+  gap: 25px !important;
+}
+
+.service-card {
+  background-color: #181818 !important;
+  border: 1px solid #2a2a2a !important;
+  border-radius: 12px !important;
+  padding: 25px !important;
+  text-align: left !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  cursor: pointer !important;
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease !important;
+}
+
+.service-card:hover {
+  transform: translateY(-4px) !important;
+  border-color: #e5b869 !important;
+  box-shadow: 0 8px 20px rgba(229, 184, 105, 0.2) !important;
+}
+
+/* Em ecrãs de telemóvel volta a 1 coluna */
+@media screen and (max-width: 600px) {
+  .services-grid-2x2 {
+    grid-template-columns: 1fr !important;
+  }
+}
