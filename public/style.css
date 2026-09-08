@@ -2367,3 +2367,73 @@ main,
   font-size: 1.4rem !important;
   font-weight: 700 !important;
 }
+/* ==========================================================
+   FORMULÁRIO DE RESERVA EXPANDIDO (LAYOUT 2x2 + HORÁRIOS NO FIM)
+   ========================================================== */
+
+/* Aumenta a largura do cartão de reserva */
+.booking-card.wide-card {
+  max-width: 850px !important;
+  width: 95% !important;
+  padding: 40px !important;
+}
+
+/* Cria o layout de grelha 2 por 2 para Desktop */
+.form-grid-2x2 {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 20px !important;
+}
+
+/* Garante que os elementos de largura total ocupam as 2 colunas */
+.full-width {
+  width: 100% !important;
+  margin-top: 10px !important;
+}
+
+/* Destaque para a secção final dos Horários Disponíveis */
+.horarios-section {
+  background-color: #121212 !important;
+  border: 1px solid #282828 !important;
+  border-radius: 8px !important;
+  padding: 20px !important;
+  margin-top: 25px !important;
+  margin-bottom: 25px !important;
+}
+
+.horarios-section .info-text {
+  color: #a0a0a0 !important;
+  font-size: 0.85rem !important;
+  margin-bottom: 12px !important;
+}
+
+/* Grelha de botões de horários */
+.horarios-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)) !important;
+  gap: 10px !important;
+  margin-top: 10px !important;
+}
+
+.horario-btn {
+  background: #1a1a1a !important;
+  border: 1px solid #e5b869 !important;
+  color: #ffffff !important;
+  padding: 10px !important;
+  border-radius: 6px !important;
+  cursor: pointer !important;
+  font-weight: 600 !important;
+  transition: all 0.2s ease !important;
+}
+
+.horario-btn:hover, .horario-btn.selected {
+  background: #e5b869 !important;
+  color: #000000 !important;
+}
+
+/* Ajuste para telemóvel (volta a 1 coluna nos ecrãs pequenos) */
+@media screen and (max-width: 768px) {
+  .form-grid-2x2 {
+    grid-template-columns: 1fr !important;
+  }
+}

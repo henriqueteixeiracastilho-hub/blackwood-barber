@@ -8,7 +8,7 @@
 </head>
 <body>
 
-  <!-- HEADER INDEPENDENTE NO TOPO -->
+  <!-- HEADER -->
   <header class="main-header">
     <a href="index.html" class="logo">BLACKWOOD BARBER</a>
     <nav class="nav-links">
@@ -22,46 +22,51 @@
     </nav>
   </header>
 
-  <!-- CONTEÚDO PRINCIPAL DA RESERVA CENTRADO -->
+  <!-- CONTEÚDO DA RESERVA MAIOR E EM 2 COLUNAS -->
   <main class="page-container">
-    <section class="booking-card">
+    <section class="booking-card wide-card">
       <h2>Agendar Serviço</h2>
       <p class="subtitle">Preencha os seus dados e selecione o horário pretendido</p>
 
       <form id="bookingForm">
-        <div class="form-group">
-          <label for="nome">NOME COMPLETO</label>
-          <input type="text" id="nome" name="nome" placeholder="Ex: Henrique Castilho" required>
+        <!-- GRELHA 2 POR 2 -->
+        <div class="form-grid-2x2">
+          <div class="form-group">
+            <label for="nome">NOME COMPLETO</label>
+            <input type="text" id="nome" name="nome" placeholder="Ex: Henrique Castilho" required>
+          </div>
+
+          <div class="form-group">
+            <label for="telemovel">TELEMÓVEL / WHATSAPP</label>
+            <input type="tel" id="telemovel" name="telemovel" placeholder="Ex: 931 961 214" required>
+          </div>
+
+          <div class="form-group">
+            <label for="servico">SERVIÇO PRETENDIDO</label>
+            <select id="servico" name="servico" required>
+              <option value="">Selecione um serviço...</option>
+              <option value="Corte de Cabelo">Corte de Cabelo</option>
+              <option value="Barba">Barba</option>
+              <option value="Corte + Barba">Corte + Barba</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="barbeiro">BARBEIRO DE PREFERÊNCIA</label>
+            <select id="barbeiro" name="barbeiro">
+              <option value="Primeiro Disponível">Primeiro Disponível</option>
+            </select>
+          </div>
         </div>
 
-        <div class="form-group">
-          <label for="telemovel">TELEMÓVEL / WHATSAPP</label>
-          <input type="tel" id="telemovel" name="telemovel" placeholder="Ex: 931 961 214" required>
-        </div>
-
-        <div class="form-group">
-          <label for="servico">SERVIÇO PRETENDIDO</label>
-          <select id="servico" name="servico" required>
-            <option value="">Selecione um serviço...</option>
-            <option value="Corte de Cabelo">Corte de Cabelo</option>
-            <option value="Barba">Barba</option>
-            <option value="Corte + Barba">Corte + Barba</option>
-          </select>
-        </div>
-
-        <div class="form-group">
-          <label for="barbeiro">BARBEIRO DE PREFERÊNCIA</label>
-          <select id="barbeiro" name="barbeiro">
-            <option value="Primeiro Disponível">Primeiro Disponível</option>
-          </select>
-        </div>
-
-        <div class="form-group">
+        <!-- DATA DA RESERVA EM LARGURA COMPLETA -->
+        <div class="form-group full-width">
           <label for="data">DATA DA RESERVA</label>
           <input type="date" id="data" name="data" required>
         </div>
 
-        <div class="form-group">
+        <!-- HORÁRIOS DISPONÍVEIS NO FINAL -->
+        <div class="form-group full-width horarios-section">
           <label>HORÁRIOS DISPONÍVEIS</label>
           <p class="info-text">Selecione uma data para ver os horários.</p>
           <div id="horariosContainer" class="horarios-grid"></div>
