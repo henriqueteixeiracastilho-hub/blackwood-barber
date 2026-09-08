@@ -2525,41 +2525,91 @@ main,
   }
 }
 /* ==========================================================
-   MELHORIA VISUAL DE PÁGINAS (FUNDO PREMIUM & BRILHO)
+   DESIGN PREMIUM & ELEGANTE - BLACKWOOD BARBER
    ========================================================== */
 
-/* Fundo dinâmico com brilho radial suave no fundo das páginas */
-.page-container {
-  background: radial-gradient(circle at top center, rgba(229, 184, 105, 0.08) 0%, rgba(18, 18, 18, 1) 70%) !important;
+/* Estrutura base da página */
+body {
+  background-color: #0f0f0f !important;
+  color: #f0f0f0 !important;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif !important;
 }
 
-/* Destaque nos títulos das secções */
-.section-title {
-  font-size: 2.2rem !important;
-  letter-spacing: 2px !important;
-  text-transform: uppercase !important;
-  text-shadow: 0 0 15px rgba(229, 184, 105, 0.2) !important;
-}
-
-/* Borda com detalhe de luz nos cartões ao passar o rato */
-.service-card, .booking-card, .reservas-card {
-  position: relative !important;
-  overflow: hidden !important;
-  background: linear-gradient(145deg, #181818, #111111) !important;
-}
-
-.service-card::before {
-  content: "✂" !important;
-  position: absolute !important;
-  top: 15px !important;
-  right: 20px !important;
-  font-size: 1.2rem !important;
+/* Títulos e Cabeçalhos de Secção */
+.section-title, .booking-card h2, .reservas-card h2 {
+  font-size: 2rem !important;
+  font-weight: 700 !important;
   color: #e5b869 !important;
-  opacity: 0.3 !important;
+  margin-bottom: 6px !important;
+  letter-spacing: 0.5px !important;
 }
 
-.service-card:hover::before {
-  opacity: 1 !important;
-  transform: scale(1.2) rotate(-10deg) !important;
-  transition: all 0.3s ease !important;
+.section-subtitle, .subtitle {
+  color: #8e8e93 !important;
+  font-size: 0.95rem !important;
+  margin-bottom: 30px !important;
+}
+
+/* Cartões com sombras suaves e borda elegante */
+.booking-card, .reservas-card, .service-card {
+  background-color: #161616 !important;
+  border: 1px solid #262626 !important;
+  border-radius: 14px !important;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4) !important;
+  transition: border-color 0.25s ease, transform 0.25s ease !important;
+}
+
+/* Efeito Hover nos Cartões de Serviços */
+.service-card:hover {
+  border-color: #e5b869 !important;
+  transform: translateY(-3px) !important;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.6) !important;
+}
+
+/* Preço em destaque nos Serviços */
+.service-card .price {
+  color: #e5b869 !important;
+  font-size: 1.5rem !important;
+  font-weight: 700 !important;
+  display: block !important;
+  margin-top: 15px !important;
+}
+
+/* Formulários elegantes */
+.form-group label {
+  color: #a1a1a6 !important;
+  font-size: 0.78rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.8px !important;
+}
+
+.form-group input, 
+.form-group select {
+  background-color: #0c0c0c !important;
+  border: 1px solid #2c2c2e !important;
+  border-radius: 8px !important;
+  color: #ffffff !important;
+  padding: 12px 16px !important;
+  transition: border-color 0.2s ease !important;
+}
+
+.form-group input:focus, 
+.form-group select:focus {
+  border-color: #e5b869 !important;
+  outline: none !important;
+}
+
+/* Botões Amarelos / Dourados */
+.btn-confirmar {
+  background-color: #e5b869 !important;
+  color: #000000 !important;
+  font-weight: 700 !important;
+  border-radius: 8px !important;
+  padding: 14px !important;
+  transition: background-color 0.2s ease, transform 0.15s ease !important;
+}
+
+.btn-confirmar:hover {
+  background-color: #f0c77a !important;
+  transform: translateY(-1px) !important;
 }
