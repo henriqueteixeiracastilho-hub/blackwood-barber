@@ -1557,3 +1557,40 @@ header {
     margin-top: 0 !important;
   }
 }
+/* --- CORREÇÃO DO FORMULÁRIO DE AGENDAMENTO --- */
+@media screen and (max-width: 768px) {
+
+  /* 1. Faz a caixa escura ocupar quase todo o ecrã do telemóvel */
+  .booking-container,
+  .form-container,
+  .card,
+  form {
+    width: 92% !important;
+    max-width: 100% !important;
+    margin: 20px auto !important;
+    padding: 20px 15px !important;
+    box-sizing: border-box !important;
+  }
+
+  /* 2. Mete os campos (Nome, Telemóvel, Serviço) 100% dentro da caixa */
+  form input,
+  form select,
+  form textarea,
+  .form-group input,
+  .form-group select {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    display: block !important;
+  }
+
+  /* 3. Ajusta o botão amarelo no fim */
+  form button,
+  .btn-submit,
+  .confirm-btn {
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+}
