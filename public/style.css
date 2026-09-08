@@ -2431,6 +2431,13 @@ main,
   color: #000000 !important;
 }
 
+.horario-btn.selected {
+  background-color: #e5b869 !important;
+  color: #000000 !important;
+  font-weight: 700 !important;
+  border-color: #e5b869 !important;
+}
+
 /* Ajuste para telemóvel (volta a 1 coluna nos ecrãs pequenos) */
 @media screen and (max-width: 768px) {
   .form-grid-2x2 {

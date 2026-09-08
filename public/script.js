@@ -348,3 +348,55 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+document.addEventListener("DOMContentLoaded", () => {
+  const dataInput = document.getElementById("data");
+  const horariosContainer = document.getElementById("horariosContainer");
+  const infoText = document.querySelector(".horarios-section .info-text");
+
+  // Lista padrão de horários de funcionamento
+  const horariosPadrao = [
+    "09:00", "09:30", "10:00", "10:30", "11:00", "11:30",
+    "14:00", "14:30", "15:00", "15:30", "16:00", "16:30", 
+    "17:00", "17:30", "18:00", "18:30"
+  ];
+
+  let horarioSelecionado = null;
+
+  if (dataInput && horariosContainer) {
+    // Escuta quando o utilizador escolhe/muda a data
+    dataInput.addEventListener("change", (e) => {
+      const dataEscolhida = e.target.value;
+
+      if (!dataEscolhida) {
+        if (infoText) infoText.textContent = "Selecione uma data para ver os horários.";
+        horariosContainer.innerHTML = "";
+        return;
+      }
+
+      // Atualiza a mensagem de instrução
+      if (infoText) infoText.textContent = "Selecione o horário pretendido:";
+      
+      // Limpa os horários anteriores
+      horariosContainer.innerHTML = "";
+
+      // Gera os botões dos horários
+      horariosPadrao.forEach((horario) => {
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "horario-btn";
+        btn.textContent = horario;
+
+        btn.addEventListener("click", () => {
+          // Remove a seleção dos outros botões
+          document.querySelectorAll(".horario-btn").forEach(b => b.classList.remove("selected"));
+          
+          // Seleciona o botão atual
+          btn.classList.add("selected");
+          horarioSelecionado = horario;
+        });
+
+        horariosContainer.appendChild(btn);
+      });
+    });
+  }
+});
