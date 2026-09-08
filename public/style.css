@@ -2181,3 +2181,86 @@ main,
   float: none !important;
   display: block !important;
 }
+/* ==========================================================
+   ESTILOS ESPECÍFICOS DA PÁGINA DE RESERVA
+   ========================================================== */
+.page-container {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  padding: 40px 20px !important;
+  min-height: calc(100vh - 80px) !important;
+}
+
+.booking-card {
+  background-color: #181818 !important;
+  border: 1px solid #2a2a2a !important;
+  border-radius: 12px !important;
+  padding: 35px !important;
+  width: 100% !important;
+  max-width: 520px !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5) !important;
+}
+
+.booking-card h2 {
+  color: #e5b869 !important;
+  margin-top: 0 !important;
+  font-size: 1.8rem !important;
+}
+
+.booking-card .subtitle {
+  color: #a0a0a0 !important;
+  font-size: 0.9rem !important;
+  margin-bottom: 25px !important;
+}
+
+.form-group {
+  margin-bottom: 20px !important;
+  text-align: left !important;
+}
+
+.form-group label {
+  display: block !important;
+  color: #d1d1d1 !important;
+  font-size: 0.75rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 1px !important;
+  margin-bottom: 8px !important;
+}
+
+.form-group input, 
+.form-group select {
+  width: 100% !important;
+  padding: 12px 15px !important;
+  background-color: #0d0d0d !important;
+  border: 1px solid #333333 !important;
+  border-radius: 6px !important;
+  color: #ffffff !important;
+  font-size: 0.95rem !important;
+  box-sizing: border-box !important;
+}
+
+.form-group input:focus, 
+.form-group select:focus {
+  outline: none !important;
+  border-color: #e5b869 !important;
+}
+
+.btn-confirmar {
+  width: 100% !important;
+  padding: 14px !important;
+  background-color: #e5b869 !important;
+  color: #000000 !important;
+  border: none !important;
+  border-radius: 6px !important;
+  font-weight: 700 !important;
+  font-size: 0.95rem !important;
+  letter-spacing: 1px !important;
+  cursor: pointer !important;
+  transition: background-color 0.2s ease, transform 0.2s ease !important;
+}
+
+.btn-confirmar:hover {
+  background-color: #f0c77a !important;
+  transform: translateY(-2px) !important;
+}
