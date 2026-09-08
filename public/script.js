@@ -329,3 +329,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
   carregarPerfil();
 });
+document.addEventListener("DOMContentLoaded", () => {
+  const menuToggle = document.getElementById("menu-toggle");
+  const navMenu = document.getElementById("nav-menu");
+
+  if (menuToggle && navMenu) {
+    // Clica nos 3 pontos para abrir/fechar
+    menuToggle.addEventListener("click", (e) => {
+      e.stopPropagation();
+      navMenu.classList.toggle("active");
+    });
+
+    // Clica fora para fechar o menu automaticamente
+    document.addEventListener("click", (e) => {
+      if (!navMenu.contains(e.target) && !menuToggle.contains(e.target)) {
+        navMenu.classList.remove("active");
+      }
+    });
+  }
+});

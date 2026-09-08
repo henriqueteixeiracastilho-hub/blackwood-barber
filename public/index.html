@@ -9,29 +9,27 @@
 <body>
 
   <!-- CABEÇALHO -->
-  <header>
-    <div class="logo">BLACKWOOD BARBER</div>
-    <nav>
-      <ul>
-        <li><a href="index.html" class="nav-btn">Início</a></li>
-        <li><a href="reserva.html" class="nav-btn">Reservar</a></li>
-        <li><a href="minhas-reservas.html" class="nav-btn">Minhas Reservas</a></li>
-        <li><a href="servicos.html" class="nav-btn">Serviços</a></li>
-        <li><a href="galeria.html" class="nav-btn">Galeria</a></li>
-        <li><a href="admin.html" class="nav-btn">Painel Admin</a></li>
-        
-        <!-- BOTÃO DE PERFIL -->
-        <li>
-          <button id="btn-abrir-perfil" class="perfil-nav-btn" type="button">
-            <img id="avatar-nav-img" src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Perfil" class="avatar-nav">
-            <span id="nome-nav-user">Meu Perfil</span>
-          </button>
-        </li>
+<header>
+  <div class="logo">BLACKWOOD BARBER</div>
 
-        <li><a href="login.html" class="nav-btn btn-sair">Sair</a></li>
-      </ul>
-    </nav>
-  </header>
+  <!-- Botão dos 3 pontos verticais -->
+  <button id="menu-toggle" class="menu-btn" aria-label="Abrir Menu">
+    &#8942;
+  </button>
+
+  <!-- Menu suspenso -->
+  <nav id="nav-menu">
+    <ul>
+      <li><a href="index.html" class="nav-btn">Início</a></li>
+      <li><a href="reserva.html" class="nav-btn">Reservar</a></li>
+      <li><a href="minhas-reservas.html" class="nav-btn">Minhas Reservas</a></li>
+      <li><a href="servicos.html" class="nav-btn">Serviços</a></li>
+      <li><a href="galeria.html" class="nav-btn">Galeria</a></li>
+      <li><a href="admin.html" class="nav-btn">Painel Admin</a></li>
+      <li><a href="login.html" class="nav-btn btn-sair">Sair</a></li>
+    </ul>
+  </nav>
+</header>
 
   <!-- CAPA PRINCIPAL -->
   <section class="hero" style="min-height: calc(100vh - 80px); display: flex; align-items: center; justify-content: center; text-align: center; background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1503951914875-452162b0f3f1?q=80&w=1600') center/cover no-repeat; padding: 20px;">

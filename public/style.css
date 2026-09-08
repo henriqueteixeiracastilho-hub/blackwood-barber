@@ -1316,3 +1316,66 @@ header {
     box-sizing: border-box !important;
   }
 }
+@media screen and (max-width: 768px) {
+  header {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    padding: 12px 20px !important;
+    position: relative !important;
+  }
+
+  /* Mostra apenas no telemóvel */
+  .menu-btn {
+    display: block !important;
+    background: none !important;
+    border: none !important;
+    color: #e5b869 !important;
+    font-size: 32px !important;
+    cursor: pointer !important;
+    padding: 0 10px !important;
+  }
+
+  /* Esconde o menu e só mostra quando clicas */
+  header nav {
+    display: none;
+    position: absolute !important;
+    top: 60px !important;
+    right: 15px !important;
+    background-color: #1a1a1a !important;
+    border: 1px solid #e5b869 !important;
+    border-radius: 8px !important;
+    width: 220px !important;
+    box-shadow: 0px 6px 15px rgba(0,0,0,0.8) !important;
+    z-index: 9999 !important;
+  }
+
+  /* Quando ativo pelo JS */
+  header nav.active {
+    display: block !important;
+  }
+
+  header nav ul {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 8px !important;
+    padding: 15px !important;
+    margin: 0 !important;
+    list-style: none !important;
+  }
+
+  header nav ul li a {
+    display: block !important;
+    text-align: center !important;
+    padding: 10px !important;
+    color: #ffffff !important;
+    text-decoration: none !important;
+  }
+}
+
+/* Esconde o botão no computador */
+@media screen and (min-width: 769px) {
+  .menu-btn {
+    display: none !important;
+  }
+}
