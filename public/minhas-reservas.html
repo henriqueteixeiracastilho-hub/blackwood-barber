@@ -4,103 +4,36 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Minhas Reservas - Blackwood Barber</title>
-  <link rel="stylesheet" href="style.css?v=10">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- CABEÇALHO -->
-<header>
-  <div class="logo">BLACKWOOD BARBER</div>
+  <!-- HEADER INDEPENDENTE NO TOPO -->
+  <header class="main-header">
+    <a href="index.html" class="logo">BLACKWOOD BARBER</a>
+    <nav class="nav-links">
+      <a href="index.html" class="nav-btn">Início</a>
+      <a href="reserva.html" class="nav-btn">Reservar</a>
+      <a href="minhas-reservas.html" class="nav-btn active">Minhas Reservas</a>
+      <a href="servicos.html" class="nav-btn">Serviços</a>
+      <a href="galeria.html" class="nav-btn">Galeria</a>
+      <a href="admin.html" class="nav-btn">Painel Admin</a>
+      <a href="login.html" class="nav-btn btn-logout">Sair</a>
+    </nav>
+  </header>
 
-  <!-- Botão dos 3 pontos verticais -->
-  <button id="menu-toggle" class="menu-btn" aria-label="Abrir Menu">
-    &#8942;
-  </button>
-
-  <!-- Menu suspenso -->
-<header class="main-header">
-  <a href="index.html" class="logo">BLACKWOOD BARBER</a>
-
-  <nav class="nav-links">
-    <a href="index.html" class="nav-btn">Início</a>
-    <a href="reserva.html" class="nav-btn">Reservar</a>
-    <a href="minhas-reservas.html" class="nav-btn">Minhas Reservas</a>
-    <a href="servicos.html" class="nav-btn">Serviços</a>
-    <a href="galeria.html" class="nav-btn">Galeria</a>
-    <a href="admin.html" class="nav-btn">Painel Admin</a>
-    <a href="login.html" class="nav-btn">Sair</a>
-  </nav>
-</header>
-
-  <!-- CONTEÚDO PRINCIPAL -->
-  <main class="main-container">
-    <div class="card-box-reserva" style="max-width: 800px; width: 100%;">
+  <!-- CONTEÚDO PRINCIPAL DE MINHAS RESERVAS CENTRADO -->
+  <main class="page-container">
+    <section class="reservas-card">
       <h2>Minhas Reservas</h2>
-      <p class="subtitulo">Consulte ou cancele as suas reservas agendadas</p>
+      <p class="subtitle">Consulte ou cancele as suas reservas agendadas</p>
 
-      <div id="lista-reservas" style="margin-top: 20px;">
-        <p style="color: #888; text-align: center;">A carregar reservas...</p>
+      <div id="listaReservas" class="reservas-list">
+        <p class="empty-msg">Nenhuma reserva encontrada.</p>
       </div>
-    </div>
+    </section>
   </main>
 
-  <!-- MODAL DE EDIÇÃO DE PERFIL -->
-  <div id="modal-perfil" class="modal-overlay">
-    <div class="modal-box">
-      <button id="btn-fechar-modal" class="modal-fechar">&times;</button>
-      <h3 style="color: #d4af37; margin-bottom: 5px;">Editar Perfil</h3>
-      <p style="color: #888; font-size: 0.85rem; margin-bottom: 20px;">Atualize o seu nome e foto de exibição</p>
-
-      <div class="preview-avatar-container">
-        <img id="modal-avatar-preview" src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Foto Perfil" class="avatar-preview">
-      </div>
-
-      <form id="form-perfil">
-        <div class="form-group" style="margin-bottom: 15px;">
-          <label for="perfil-nome">NOME</label>
-          <input type="text" id="perfil-nome" required placeholder="O seu nome">
-        </div>
-
-        <div class="form-group" style="margin-bottom: 20px;">
-          <label for="perfil-foto-url">URL DA FOTO / IMAGEM</label>
-          <input type="url" id="perfil-foto-url" placeholder="https://exemplo.com/foto.jpg">
-        </div>
-
-        <button type="submit" class="btn-submit" style="width: 100%;">GUARDAR ALTERAÇÕES</button>
-      </form>
-    </div>
-  </div>
-
   <script src="script.js"></script>
-<!-- MODAL DE EDIÇÃO DE PERFIL -->
-<div id="modal-perfil" class="modal-overlay">
-  <div class="modal-box">
-    <button id="btn-fechar-modal" class="modal-fechar">&times;</button>
-    <h3 style="color: #d4af37; margin-bottom: 5px; text-align: center;">Editar Perfil</h3>
-    <p style="color: #888; font-size: 0.85rem; margin-bottom: 20px; text-align: center;">Atualize o seu nome e foto de perfil</p>
-
-    <!-- FOTO DE PERFIL COM ÍCONE DE LÁPIS/PINCEL -->
-    <div class="avatar-upload-container">
-      <div class="avatar-wrapper">
-        <img id="modal-avatar-preview" src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Foto Perfil" class="avatar-preview">
-        
-        <!-- Botão com lápis por cima da foto -->
-        <label for="perfil-foto-file" class="btn-trocar-foto" title="Mudar Foto">
-          ✏️
-        </label>
-        <input type="file" id="perfil-foto-file" accept="image/*" style="display: none;">
-      </div>
-    </div>
-
-    <form id="form-perfil">
-      <div class="form-group" style="margin-bottom: 20px;">
-        <label for="perfil-nome">NOME COMPLETO</label>
-        <input type="text" id="perfil-nome" required placeholder="O seu nome">
-      </div>
-
-      <button type="submit" class="btn-submit" style="width: 100%;">GUARDAR ALTERAÇÕES</button>
-    </form>
-  </div>
-</div>
 </body>
 </html>
