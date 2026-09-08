@@ -2524,3 +2524,42 @@ main,
     grid-template-columns: 1fr !important;
   }
 }
+/* ==========================================================
+   MELHORIA VISUAL DE PÁGINAS (FUNDO PREMIUM & BRILHO)
+   ========================================================== */
+
+/* Fundo dinâmico com brilho radial suave no fundo das páginas */
+.page-container {
+  background: radial-gradient(circle at top center, rgba(229, 184, 105, 0.08) 0%, rgba(18, 18, 18, 1) 70%) !important;
+}
+
+/* Destaque nos títulos das secções */
+.section-title {
+  font-size: 2.2rem !important;
+  letter-spacing: 2px !important;
+  text-transform: uppercase !important;
+  text-shadow: 0 0 15px rgba(229, 184, 105, 0.2) !important;
+}
+
+/* Borda com detalhe de luz nos cartões ao passar o rato */
+.service-card, .booking-card, .reservas-card {
+  position: relative !important;
+  overflow: hidden !important;
+  background: linear-gradient(145deg, #181818, #111111) !important;
+}
+
+.service-card::before {
+  content: "✂" !important;
+  position: absolute !important;
+  top: 15px !important;
+  right: 20px !important;
+  font-size: 1.2rem !important;
+  color: #e5b869 !important;
+  opacity: 0.3 !important;
+}
+
+.service-card:hover::before {
+  opacity: 1 !important;
+  transform: scale(1.2) rotate(-10deg) !important;
+  transition: all 0.3s ease !important;
+}
