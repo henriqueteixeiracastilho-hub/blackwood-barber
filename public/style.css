@@ -1800,3 +1800,56 @@ header {
     width: 100% !important;
   }
 }
+/* --- ESTILO FORÇADO DO HEADER E NAVEGAÇÃO --- */
+header, nav, .navbar {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  padding: 15px 30px !important;
+  background-color: #0c0c0c !important;
+}
+
+/* Força o estilo dos botões em formato de cápsula */
+header a, nav a, .navbar a {
+  display: inline-block !important;
+  padding: 8px 18px !important;
+  color: #ffffff !important;
+  text-decoration: none !important;
+  font-weight: 600 !important;
+  font-size: 0.85rem !important;
+  border: 1px solid #d4af37 !important; /* Borda dourada */
+  border-radius: 50px !important;       /* Formato cápsula */
+  background-color: transparent !important;
+  margin-left: 8px !important;
+  transition: all 0.3s ease !important;
+}
+
+/* Garante que o Logo "BLACKWOOD BARBER" NÃO fica com formato de botão */
+header a.logo, header .logo, nav a.logo {
+  border: none !important;
+  background: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  font-size: 1.2rem !important;
+  font-weight: bold !important;
+  color: #d4af37 !important;
+}
+
+/* Efeito ao passar o rato por cima */
+header a:not(.logo):hover, nav a:not(.logo):hover {
+  background-color: #d4af37 !important;
+  color: #000000 !important;
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.4) !important;
+}
+
+/* Força o último botão (Sair) a ficar vermelho */
+header a:last-child, nav a:last-child {
+  border-color: #ff4d4d !important;
+  color: #ff4d4d !important;
+}
+
+header a:last-child:hover, nav a:last-child:hover {
+  background-color: #ff4d4d !important;
+  color: #ffffff !important;
+  box-shadow: 0 0 10px rgba(255, 77, 77, 0.4) !important;
+}
