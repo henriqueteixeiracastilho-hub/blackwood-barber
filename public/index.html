@@ -12,12 +12,12 @@
 <header>
   <div class="logo">BLACKWOOD BARBER</div>
 
-  <!-- Botão dos 3 pontos verticais -->
+  <!-- Botão dos 3 TRAÇOS -->
   <button id="menu-toggle" class="menu-btn" aria-label="Abrir Menu">
-    &#8942;
+    &#9776;
   </button>
 
-  <!-- Menu suspenso -->
+  <!-- Menu de Navegação -->
   <nav id="nav-menu">
     <ul>
       <li><a href="index.html" class="nav-btn">Início</a></li>
@@ -30,6 +30,25 @@
     </ul>
   </nav>
 </header>
+
+<!-- Script direto para garantir que o clique nos 3 traços funciona sem falhas -->
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const btn = document.getElementById("menu-toggle");
+    const nav = document.getElementById("nav-menu");
+    if (btn && nav) {
+      btn.addEventListener("click", function(e) {
+        e.stopPropagation();
+        nav.classList.toggle("active");
+      });
+      document.addEventListener("click", function(e) {
+        if (!nav.contains(e.target) && !btn.contains(e.target)) {
+          nav.classList.remove("active");
+        }
+      });
+    }
+  });
+</script>
 
   <!-- CAPA PRINCIPAL -->
   <section class="hero" style="min-height: calc(100vh - 80px); display: flex; align-items: center; justify-content: center; text-align: center; background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1503951914875-452162b0f3f1?q=80&w=1600') center/cover no-repeat; padding: 20px;">
